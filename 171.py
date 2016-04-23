@@ -1,3 +1,4 @@
+#171-excel-sheet-column-number
 class Solution(object):
     def titleToNumber(self, s):
         """
@@ -9,4 +10,3 @@ class Solution(object):
             num *= 26
             num += (ord(s[i].upper())-ord('A')+1)
         return num
-            
