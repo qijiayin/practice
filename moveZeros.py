@@ -6,21 +6,24 @@ class Solution(object):
         :type nums: List[int]
         :rtype: void Do not return anything, modify nums in-place instead.
         """
-        i=0
-        j=0
-        while (j<len(nums) and i<len(nums)) :
-            while (i<len(nums) and nums[i]!=0) : i=i+1
-            if i>=len(nums) :return
-            print "i=%d,j=%d" %(i,j)
-            print nums
-            while (j<len(nums) and nums[j]==0): j=j+1
-            if j>=len(nums) or j<=i:return
-            nums[i]=nums[j]
-            nums[j]=0
+        i=-1
+        while (i+1<len(nums) and nums[i+1]) :
+            i+=1
+        j=i+1
+        while j<len(nums):
+            if nums[j] == 0 :
+                j+=1
+            else:
+                tmp=nums[i+1]
+                nums[i+1]=nums[j]
+                nums[j]=0 # can't assin 0 to nums[j] , test case [0,1]
+                i+=1
+                j+=1
+
 
 def main():
     s=Solution()
-    nums=[1,0,1]
+    nums=[0,1]
     s.moveZeroes(nums)
     print nums
 
