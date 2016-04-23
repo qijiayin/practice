@@ -6,4 +6,5 @@ import sys
 def __main__():
     print(sys.argv[0])
 
-__main__()
+if __name__ == '__main__':
+    __main__()
